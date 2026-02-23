@@ -8,7 +8,6 @@ The problem occurs when computing the Jensen–Shannon distance between proporti
 
 This note documents the reproduction, root cause, and fix strategy.
 
-⸻
 
 ## 2. Minimal Reproductions
 
