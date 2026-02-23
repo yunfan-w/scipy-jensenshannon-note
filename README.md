@@ -9,6 +9,19 @@ The issue arises when computing the Jensen–Shannon distance between proportion
 - Produce a tiny negative divergence leading to `NaN` after `sqrt`
 - Yield a non-negligible positive distance under float32 precision
 
+
+Below shows the computed Jensen–Shannon distance for proportional vectors of varying dimension.
+
+![Numerical error on proportional inputs](docs/error_comparison.png)
+
+Observations:
+
+- `float64` may produce `NaN` due to taking the square root of a tiny negative value.
+- `float32` may return distances on the order of 1e-4 instead of zero.
+- Behavior depends on vector dimension due to floating-point accumulation effects.
+
+
+
 The full technical analysis, reproduction, and fix explanation can be found in:
 
 📄 `docs/jensenshannon-numerical-stability.md`
